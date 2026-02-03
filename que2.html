@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ques 2</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex flex-col items-center justify-center min-h-screen w-full">
+        <textarea id="content" class="bg-sky-300 " ></textarea>
+        <p id="char">0/100</p>
+        <p>Max Char Limit is 100</p>
+    </div>
+    <script>
+        (function(){
+        const content =document.getElementById("content")
+        const char =document.getElementById("char")
+        content.addEventListener("input",()=>{
+            const count =content.value.length
+            char.textContent = count + "/100"
+            // if (content.value.length > 100) {
+            // content.value = content.value.slice(0,99)
+            // }
+            if (count >=100) {
+                char.style.color = "red"
+            } 
+            else {
+                char.style.color ="black"
+            }
+        })
+        })()
+    </script>
+</body>
+</html>
